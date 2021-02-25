@@ -18,9 +18,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableAsync
 @SpringBootApplication
+@EnableSwagger2
 @EnableTransactionManagement
 @MapperScan("cso.org.cn.mapper")
 public class PortalPlatformApplication {
