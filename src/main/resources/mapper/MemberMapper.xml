@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cso.org.cn.mapper.MemberMapper">
+
+    <sql id="paramsql">
+        id, member_name, member_sex, member_birthday, member_profile_info, member_photo
+    </sql>
+
+    <sql id ="where">
+        <if test="id != 0">
+            id,
+        </if>
+        <if test="memberName != null and memberName != ''">
+            #{memberName, jdbcType=VARCHAR},
+        </if>
+        <if test="memberSex != null and memberSex != ''">
+            #{memberSex, jdbcType=VARCHAR},
+        </if>
+        <if test="memberBirthday != null and memberBirthday != ''">
+            #{memberBirthday, jdbcType=VARCHAR},
+        </if>
+        <if test="memberProfileInfo != null and memberProfileInfo != ''">
+            #{memberProfileInfo, jdbcType=VARCHAR},
+        </if>
+        <if test="memberPhoto != null and memberPhoto != ''">
+            #{memberPhoto, jdbcType=VARCHAR}
+        </if>
+    </sql>
+
+    <!-- 多条件查询用户信息 -->
+    <select id="queryMemberInfoByList" resultType="cso.org.cn.entity.Member" parameterType="cso.org.cn.entity.Member">
+        select
+        <include refid="paramsql"/>
+        from cso_member
+        <where>
+            <if test="memberName != null and memberName != ''" >
+                and member_name = #{memberName}
+            </if>
+            <if test="memberSex != null and memberSex != ''">
+                and member_sex = #{memberSex}
+            </if>
+        </where>
+    </select>
+
+    <!-- 用户信息插入 -->
+    <insert id="insertMemberInfo" useGeneratedKeys="true" keyProperty="id" parameterType="cso.org.cn.entity.Member">
+        insert into cso_member
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != 0">
+                id,
+            </if>
+            <if test="memberName != null and memberName != ''">
+                member_name,
+            </if>
+            <if test="memberSex != null and memberSex != ''">
+                member_sex,
+            </if>
+            <if test="memberBirthday != null and memberBirthday != ''">
+                member_birthday,
+            </if>
+            <if test="memberProfileInfo != null and memberProfileInfo != ''">
+                member_profile_info,
+            </if>
+            <if test="memberPhoto != null and memberPhoto != ''">
+                member_photo,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <include refid="choiceparam"/>
+        </trim>
+    </insert>
+
+    <!-- 用户信息修改 -->
+    <update id="updateMemberInfoById" parameterType="java.lang.Integer">
+        update cso_member
+        <set>
+            <include refid="choiceparam"/>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!-- 用户信息删除 -->
+    <delete id="deleteMemberInfoById" parameterType="java.lang.Integer">
+        delete from cso_member where id = #{id}
+    </delete>
+</mapper>
