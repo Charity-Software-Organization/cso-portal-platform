@@ -12,9 +12,12 @@
  */
 package cso.org.cn.entity;
 
+import lombok.Data;
+
 /**
  * 合作机构实体信息
  */
+@Data
 public class CooperationOrganization {
 
     // 主键id
@@ -26,27 +29,4 @@ public class CooperationOrganization {
     // 合作机构详细信息
     private String coOrgProfileInfo;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getCoOrgName() {
-        return coOrgName;
-    }
-
-    public void setCoOrgName(String coOrgName) {
-        this.coOrgName = coOrgName;
-    }
-
-    public String getCoOrgProfileInfo() {
-        return coOrgProfileInfo;
-    }
-
-    public void setCoOrgProfileInfo(String coOrgProfileInfo) {
-        this.coOrgProfileInfo = coOrgProfileInfo;
-    }
 }

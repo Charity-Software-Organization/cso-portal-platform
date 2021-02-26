@@ -12,9 +12,12 @@
  */
 package cso.org.cn.entity;
 
+import lombok.Data;
+
 /**
  * 组织实体信息
  */
+@Data
 public class Organization {
 
     // 主键ID
@@ -26,27 +29,5 @@ public class Organization {
     // 组织创建日期
     private String orgCreatedate;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        id = id;
-    }
-
-    public String getOrgProfileInfo() {
-        return orgProfileInfo;
-    }
-
-    public void setOrgProfileInfo(String orgProfileInfo) {
-        this.orgProfileInfo = orgProfileInfo;
-    }
-
-    public String getOrgCreatedate() {
-        return orgCreatedate;
-    }
-
-    public void setOrgCreatedate(String orgCreatedate) {
-        this.orgCreatedate = orgCreatedate;
-    }
 }

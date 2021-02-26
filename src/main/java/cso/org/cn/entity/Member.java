@@ -12,9 +12,12 @@
  */
 package cso.org.cn.entity;
 
+import lombok.Data;
+
 /**
  * 成员实体信息
  */
+@Data
 public class Member {
 
     // 主键id
@@ -35,51 +38,5 @@ public class Member {
     // 成员照片（url地址）
     private String memberPhoto;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMemberName() {
-        return memberName;
-    }
-
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
-    }
-
-    public String getMemberSex() {
-        return memberSex;
-    }
-
-    public void setMemberSex(String memberSex) {
-        this.memberSex = memberSex;
-    }
-
-    public String getMemberBirthday() {
-        return memberBirthday;
-    }
-
-    public void setMemberBirthday(String memberBirthday) {
-        this.memberBirthday = memberBirthday;
-    }
-
-    public String getMemberProfileInfo() {
-        return memberProfileInfo;
-    }
-
-    public void setMemberProfileInfo(String memberProfileInfo) {
-        this.memberProfileInfo = memberProfileInfo;
-    }
-
-    public String getMemberPhoto() {
-        return memberPhoto;
-    }
-
-    public void setMemberPhoto(String memberPhoto) {
-        this.memberPhoto = memberPhoto;
-    }
 }

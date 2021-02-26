@@ -12,9 +12,12 @@
  */
 package cso.org.cn.entity;
 
+import lombok.Data;
+
 /**
  * 捐赠实体类
  */
+@Data
 public class Donation {
 
     // 主键id
@@ -32,43 +35,5 @@ public class Donation {
     // 捐赠类型（1.线上 2.线下）
     private int donationType;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getDonationOrgName() {
-        return donationOrgName;
-    }
-
-    public void setDonationOrgName(String donationOrgName) {
-        this.donationOrgName = donationOrgName;
-    }
-
-    public String getDonationProjectName() {
-        return donationProjectName;
-    }
-
-    public void setDonationProjectName(String donationProjectName) {
-        this.donationProjectName = donationProjectName;
-    }
-
-    public double getDonationPrice() {
-        return donationPrice;
-    }
-
-    public void setDonationPrice(double donationPrice) {
-        this.donationPrice = donationPrice;
-    }
-
-    public int getDonationType() {
-        return donationType;
-    }
-
-    public void setDonationType(int donationType) {
-        this.donationType = donationType;
-    }
 }
