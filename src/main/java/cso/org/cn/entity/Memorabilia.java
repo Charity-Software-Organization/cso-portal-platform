@@ -12,9 +12,12 @@
  */
 package cso.org.cn.entity;
 
+import lombok.Data;
+
 /**
  * 大事记 实体信息
  */
+@Data
 public class Memorabilia {
 
     // 主键id
@@ -32,43 +35,5 @@ public class Memorabilia {
     // 大事记类型（1.对组织内，2.对组织外）
     private int memorabiliaType;
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMemorabiliaTitle() {
-        return memorabiliaTitle;
-    }
-
-    public void setMemorabiliaTitle(String memorabiliaTitle) {
-        this.memorabiliaTitle = memorabiliaTitle;
-    }
-
-    public String getMemorabiliaInfo() {
-        return memorabiliaInfo;
-    }
-
-    public void setMemorabiliaInfo(String memorabiliaInfo) {
-        this.memorabiliaInfo = memorabiliaInfo;
-    }
-
-    public String getMemorabiliaDate() {
-        return memorabiliaDate;
-    }
-
-    public void setMemorabiliaDate(String memorabiliaDate) {
-        this.memorabiliaDate = memorabiliaDate;
-    }
-
-    public int getMemorabiliaType() {
-        return memorabiliaType;
-    }
-
-    public void setMemorabiliaType(int memorabiliaType) {
-        this.memorabiliaType = memorabiliaType;
-    }
 }
