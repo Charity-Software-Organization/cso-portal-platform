@@ -66,7 +66,7 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <include refid="choiceparam"/>
+            <include refid="paramsql"/>
         </trim>
     </insert>
 
@@ -74,7 +74,7 @@
     <update id="updateMemberInfoById" parameterType="java.lang.Integer">
         update cso_member
         <set>
-            <include refid="choiceparam"/>
+            <include refid="paramsql"/>
         </set>
         where id = #{id}
     </update>

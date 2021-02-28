@@ -21,7 +21,7 @@ import lombok.Data;
 public class Donation {
 
     // 主键id
-    private int id;
+    private String id;
 
     // 捐赠机构名称
     private String donationOrgName;

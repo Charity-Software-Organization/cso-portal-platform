@@ -21,7 +21,7 @@ import lombok.Data;
 public class Memorabilia {
 
     // 主键id
-    private int id;
+    private String id;
 
     // 大事记标题
     private String memorabiliaTitle;

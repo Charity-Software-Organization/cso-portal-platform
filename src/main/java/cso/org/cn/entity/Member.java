@@ -21,7 +21,7 @@ import lombok.Data;
 public class Member {
 
     // 主键id
-    private int id;
+    private String id;
 
     // 成员名称
     private String memberName;

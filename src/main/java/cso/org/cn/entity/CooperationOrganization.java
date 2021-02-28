@@ -21,7 +21,7 @@ import lombok.Data;
 public class CooperationOrganization {
 
     // 主键id
-    private int id;
+    private String id;
 
     // 合作机构名称
     private String coOrgName;

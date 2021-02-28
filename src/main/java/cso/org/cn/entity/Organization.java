@@ -21,7 +21,7 @@ import lombok.Data;
 public class Organization {
 
     // 主键ID
-    private int id;
+    private String id;
 
     // 组织简介
     private String orgProfileInfo;
