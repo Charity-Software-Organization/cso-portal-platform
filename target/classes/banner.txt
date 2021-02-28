@@ -1,0 +1,8 @@
+|---------------------------------------------------------|
+|    Charity-Software-Organization 官网接口项目            |
+|    Spring-Boot-Version: ${spring-boot.version}          |
+|    website: www.charitysoftware.org.cn                  |
+|               Apache License                            |
+|           Version 2.0, January 2004                     |
+|     http://www.apache.org/licenses/LICENSE-2.0          |
+|---------------------------------------------------------|

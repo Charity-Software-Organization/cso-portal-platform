@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cso.org.cn.mapper.OrganizationMapper">
+
+    <sql id="paramsql">
+        id, org_profile_info, org_createdate
+    </sql>
+
+    <!-- 简单查询组织信息 -->
+    <select id="queryOrganizationInfo" resultType="cso.org.cn.entity.Organization">
+        select
+        <include refid="paramsql"/>
+        FROM cso_organization
+    </select>
+
+</mapper>
