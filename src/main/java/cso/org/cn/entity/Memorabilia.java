@@ -12,15 +12,26 @@
  */
 package cso.org.cn.entity;
 
+import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
 
 /**
  * 大事记 实体信息
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("cso_memorabilia")
 public class Memorabilia {
 
     // 主键id
+    @TableId(value = "id",type = IdType.ASSIGN_UUID)
     private String id;
 
     // 大事记标题
@@ -35,5 +46,26 @@ public class Memorabilia {
     // 大事记类型（1.对组织内，2.对组织外）
     private int memorabiliaType;
 
+    /**
+     * 0 未删除 1删除
+     */
+    @TableLogic
+    private Integer del;
 
+    /**
+     * 创建时间
+     */
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+    /**
+     * 修改时间
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Date updateTime;
 }

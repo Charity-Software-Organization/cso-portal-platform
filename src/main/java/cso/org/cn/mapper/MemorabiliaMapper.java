@@ -1,6 +1,6 @@
 package cso.org.cn.mapper;
 
-import cso.org.cn.entity.Donation;
+import cso.org.cn.entity.Memorabilia;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author CSO
  * @since 2021-02-28
  */
-public interface DonationMapper extends BaseMapper<Donation> {
+public interface MemorabiliaMapper extends BaseMapper<Memorabilia> {
 
 }

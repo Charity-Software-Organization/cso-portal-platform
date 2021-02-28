@@ -1,6 +1,6 @@
 package cso.org.cn.service;
 
-import cso.org.cn.entity.Donation;
+import cso.org.cn.entity.Memorabilia;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author CSO
  * @since 2021-02-28
  */
-public interface DonationService extends IService<Donation> {
+public interface MemorabiliaService extends IService<Memorabilia> {
 
 }

@@ -13,14 +13,18 @@ spring:
     proxy-target-class: true
 
 mybatis-plus:
-  type-aliases-package: cso.org.cn.entity
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations:  mapper/*.xml
   configuration:
-    jdbc-type-for-null: null
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #懒加载相关
+    lazy-loading-enabled: true
+    #true表示如果对具有懒加载特性的对象的任意调用会导致这个对象的完整加载，false表示每种属性按照需要加载
+    aggressive-lazy-loading: false
   global-config:
-    banner: false
     db-config:
-      select-strategy: not_empty
+      logic-not-delete-value: 0
+      logic-delete-value: 1
 
 logging:
   level:
